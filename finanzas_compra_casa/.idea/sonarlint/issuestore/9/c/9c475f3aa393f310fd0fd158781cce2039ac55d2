@@ -1,7 +1,11 @@
 
+J
+java:S16042"(Make this anonymous inner class a lambda(Ï¹ÿîúÿÿÿÿ8‡¨Ñ‚2
+£
+java:S1186C"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(èÀÓ¤øÿÿÿÿ8êúĞ‚2
 C
-java:S2326"!JPanel is not used in the method.(ø‡¯ûÿÿÿÿ8¬ÁÏ2
-j	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(ø‡¯ûÿÿÿÿ8äŠÌ2
+java:S2326	"!JPanel is not used in the method.(ø‡¯ûÿÿÿÿ8ú¾Ï‚2
+j	java:S119	"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(ø‡¯ûÿÿÿÿ8û¾Ï‚2
 f
-java:S3252
-"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8›ªĞ2
+java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8ü¾Ï‚2
+]	java:S1257"<This block of commented-out lines of code should be removed.(ü¿ı¶ÿÿÿÿÿ8íàÓ‚2
