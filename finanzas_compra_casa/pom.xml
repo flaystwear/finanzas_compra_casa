@@ -6,4 +6,8 @@
   <version>1.0-SNAPSHOT</version>
   <name>Archetype - finanzas_compra_casa</name>
   <url>http://maven.apache.org</url>
+
+  <dependencies>
+
+  </dependencies>
 </project>
