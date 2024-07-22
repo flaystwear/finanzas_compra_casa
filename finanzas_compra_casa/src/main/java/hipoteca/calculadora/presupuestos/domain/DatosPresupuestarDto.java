@@ -18,6 +18,7 @@ public class DatosPresupuestarDto {
     private double salarioNeto;
     private double deudas;
     private boolean simulacionExtra;
+    private double dineroSolicitado;
 
 
     @Override

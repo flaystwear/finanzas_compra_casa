@@ -15,11 +15,14 @@ public class ImpuestosInmobiliaria implements CalculadoraImpuestos {
 
         switch (datos.getInmobiliaria()){
             case "TecnoCasa":
-                return datos.getPrecioCasa()*Constantes.MODIFICADOR_TECNOCASA*Constantes.MODIFICADOR_IVA;
+                double comisionTecno=datos.getPrecioCasa()*Constantes.MODIFICADOR_TECNOCASA;
+                return comisionTecno*Constantes.MODIFICADOR_IVA+comisionTecno;
             case "Redpiso":
-                return datos.getPrecioCasa()*Constantes.MODIFICADOR_REDPISO*Constantes.MODIFICADOR_IVA;
+                double comisionRedpi=datos.getPrecioCasa()*Constantes.MODIFICADOR_REDPISO;
+                return comisionRedpi*Constantes.MODIFICADOR_IVA+comisionRedpi;
             case "Otra":
-                return datos.getPrecioCasa()*Constantes.MODIFICADOR_BASE*Constantes.MODIFICADOR_IVA;
+                double comision=datos.getPrecioCasa()*Constantes.MODIFICADOR_BASE;
+                return comision*Constantes.MODIFICADOR_IVA+comision;
             default:
                 return 0.0;
         }

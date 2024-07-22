@@ -11,6 +11,13 @@ public class Letra   implements CalculadoraPrecios {
 
     @Override
     public Double calcularPresupuesto(DatosPresupuestarDto datos) {
-       return null;
+        double C = datos.getDineroSolicitado();//cantidad del préstamo
+        double i=(datos.getTipoInteres()/12.0)/100;// TIN dividido entre 12
+        double n=datos.getTiempoHipoteca()*12.0;//meses de duración
+
+       return (
+                ((Math.pow((1.0+i),n))*i)
+                /  ((Math.pow((1.0+i),n))-1)
+        )*C;
     }
 }
