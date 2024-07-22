@@ -16,6 +16,7 @@ public class Constantes {
     public static final double PRECIO_FINANCIERO=3000.0;
     public static final double PRECIO_TASACION=484.0;
     public static final double PRECIO_NOTARIO= 1700;
+    public static final double SUBIR_PRECIO=1.05;
 
 }
 

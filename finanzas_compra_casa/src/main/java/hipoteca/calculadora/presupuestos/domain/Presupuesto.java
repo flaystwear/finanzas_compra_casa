@@ -11,6 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Presupuesto {
+    private double precioCasa;
     private double impuestosCompra;
     private double gastosComisionesInmobiliaria;
     private double gastosComisionesFinanciero;
@@ -24,6 +25,7 @@ public class Presupuesto {
     @Override
     public String toString() {
         return "Presupuesto{" +
+                "\n\n\n Precio de la casa = " + precioCasa +
                 "\n\n\n impuestos a pagar por la compra = " + impuestosCompra +
                 ",\n\n\n comisón de la inmobiliaria = " + gastosComisionesInmobiliaria +
                 ",\n\n\n comisión al financiero = " + gastosComisionesFinanciero +
@@ -34,5 +36,21 @@ public class Presupuesto {
                 ",\n\n\n PRESUPUESTO (DINERO AHORRADO NECESARIO) = " + dineroTotalNecesario +
                 ",\n\n\n letra (pago mensual) = " + letraMensual +
                 '}';
+    }
+    public String toStringConWarning() {
+        return "Presupuesto{" +
+                "\n\n\n Precio de la casa = " + precioCasa +
+                "\n\n\n impuestos a pagar por la compra = " + impuestosCompra +
+                ",\n\n\n comisón de la inmobiliaria = " + gastosComisionesInmobiliaria +
+                ",\n\n\n comisión al financiero = " + gastosComisionesFinanciero +
+                ",\n\n\n gastos de notaria= " + gastosNotaria +
+                ",\n\n\n gastos de tasacion= " + gastosTasacion +
+                ",\n \n\n entrada=" + entrada +
+                ",\n\n\n préstamo solicitado al banco = " + dineroSolicitadoAlBanco +
+                ",\n\n\n PRESUPUESTO (DINERO AHORRADO NECESARIO) = " + dineroTotalNecesario +
+                ",\n\n\n letra (pago mensual) = " + letraMensual +
+                "}\n\n\n ALERTA: LA LETRA O PAGO MENSUAL ES \n" +
+                "DEMASIADO ELEVADO PARA LOS INGRESOS NETOS MENSUALES \n" +
+                "ESTA HIPOTECA NO PODRÍA SER CONCEDIDA";
     }
 }

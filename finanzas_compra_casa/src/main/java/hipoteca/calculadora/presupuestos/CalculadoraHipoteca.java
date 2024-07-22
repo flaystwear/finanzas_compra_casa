@@ -59,7 +59,7 @@ public class CalculadoraHipoteca {
 
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(12, 1)); // 5 filas y 2 columnas
+        panel.setLayout(new GridLayout(13, 2)); // 5 filas y 2 columnas
 
         // Configurar NumberFormat para decimales
         NumberFormat decimalFormat = NumberFormat.getNumberInstance();
@@ -105,7 +105,11 @@ public class CalculadoraHipoteca {
         deudasField.setValue(0);
 
 
+        JLabel labelInformativo = new JLabel("No sabes el precio? Si tienes presupuesto:");
+
+
         JButton submitButton = new JButton("Calcular presupuestos");
+        JButton casaParaComprarButton = new JButton("Que casa me compro?");
 
         // Añadir los componentes al panel
         panel.add(precioCasaLabel);
@@ -149,11 +153,17 @@ public class CalculadoraHipoteca {
 
         panel.add(deudasLabel);
         panel.add(deudasField);
+        panel.add(Box.createVerticalStrut(10));
+
+        panel.add(new JLabel()); // Espacio vacío
+        panel.add(submitButton);
+
 
 
         panel.add(new JLabel()); // Espacio vacío        panel.add(new JLabel()); // Espacio vacío
         panel.add(new JLabel()); // Espacio vacío
-        panel.add(submitButton);
+        panel.add(labelInformativo);
+        panel.add(casaParaComprarButton);
 
         // Añadir el panel al frame
         frame.add(panel);
@@ -192,6 +202,80 @@ public class CalculadoraHipoteca {
             }
         });
 
+        casaParaComprarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                    //Creamos un frame extra para poner el campo adicional que necesitamos:
+                    JFrame dialogoExtra = new JFrame("Calculadora presupuestos hipotecas");
+                    dialogoExtra.setSize(450, 150);
+                    dialogoExtra.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                    dialogoExtra.setLocationRelativeTo(null); // Centrar la ventana en la pantalla
+
+                    JPanel panelExtra = new JPanel();
+                    panelExtra.setLayout(new GridLayout(3, 2));
+
+                    // Configurar NumberFormat para decimales
+                    NumberFormat decimalFormat = NumberFormat.getNumberInstance();
+                    decimalFormat.setMaximumFractionDigits(2); // Número máximo de decimales
+
+                    //Creación de los campos:
+                    JLabel presupuestoCasalabel = new JLabel("Cuanto dinero total quieres gastar");
+                    JFormattedTextField presupuestoCasaField = new JFormattedTextField(decimalFormat);
+
+                    JButton cuantoPuedeCostar = new JButton("Cuanto puede costar la casa?");
+
+                    panelExtra.add(presupuestoCasalabel);
+                    panelExtra.add(presupuestoCasaField);
+                    panelExtra.add(Box.createVerticalStrut(10));
+
+                    panelExtra.add(Box.createVerticalStrut(10));
+                    panelExtra.add(cuantoPuedeCostar);
+
+                    dialogoExtra.add(panelExtra);
+
+                    // Mostrar la ventana
+                    dialogoExtra.setVisible(true);
+
+
+                cuantoPuedeCostar.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        try{
+                            String tipoInteres=tipoInteresField.getText().replace(",",".");
+                            String cuantoGastar=presupuestoCasaField.getText().replace(".","");
+                            String salarioNeto=salarioField.getText().replace(".","");
+                            DatosPresupuestarDto datosPresupuestarDto=
+                                    DatosPresupuestarDto.builder()
+                                            .cuantoQuieroGastar(Double.parseDouble(cuantoGastar))
+                                            .inmobiliaria((String) inmobiliariaComboBox.getSelectedItem())
+                                            .porcentajeFinanciar(Double.parseDouble(entradaComboBox.getSelectedItem().toString()))
+                                            .tipoInteres(Double.parseDouble(tipoInteres))
+                                            .financiero(financieroCheckBox.isSelected())
+                                            .propiedades(propiedadCheckBox.isSelected())
+                                            .tiempoHipoteca(Integer.parseInt(tiempoHipotecaField.getText()))
+                                            .tipoVivienda(tipoCasaComboBox.getSelectedItem().toString())
+                                            .salarioNeto(Double.parseDouble(salarioNeto))
+                                            .deudas(Double.parseDouble(deudasField.getText()))
+                                            .build();
+                            calcularCasa(datosPresupuestarDto,frame);
+                            // Mostrar un mensaje con los datos introducidos
+                            // JOptionPane.showMessageDialog(frame, "Nombre: " + nombre + "\nApellido: " + apellido + "\nEmail: " + email + "\nTeléfono: " + telefono);
+                        }catch (NullPointerException | ClassCastException | NumberFormatException  exception){
+                            System.out.println(exception.getMessage());
+                            showMissingFieldElem(frame);
+                        } catch (PresupuestoDenegadoException exception){
+                            System.out.println(exception.getMessage());
+                            showNotEnoughMoney(frame, exception);
+                        }
+                    }
+                });
+
+            }
+        });
+
+
+
 
         // Mostrar la ventana
         frame.setVisible(true);
@@ -200,6 +284,15 @@ public class CalculadoraHipoteca {
     public void executeSimulation(DatosPresupuestarDto datosPresupuestarDto, JFrame frame) throws PresupuestoDenegadoException {
         Presupuesto presupuesto=elaborarPresupuesto.execute(datosPresupuestarDto);
         JOptionPane.showMessageDialog(frame, presupuesto.toString());
+    }
+    public void calcularCasa(DatosPresupuestarDto datosPresupuestarDto, JFrame frame) throws PresupuestoDenegadoException {
+        Presupuesto presupuesto=elaborarPresupuesto.executeFindAHome(datosPresupuestarDto);
+        if(presupuesto.getDineroSolicitadoAlBanco()>99999999.99){
+            JOptionPane.showMessageDialog(frame, presupuesto.toStringConWarning());
+        } else {
+            JOptionPane.showMessageDialog(frame, presupuesto.toString());
+        }
+
     }
 
 
