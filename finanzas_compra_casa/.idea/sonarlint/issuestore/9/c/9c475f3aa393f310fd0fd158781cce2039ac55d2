@@ -1,7 +1,6 @@
 
-C
-java:S2326"!JPanel is not used in the method.(ø‡¯ûÿÿÿÿ8¬ÁÏ2
-j	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(ø‡¯ûÿÿÿÿ8äŠÌ2
+K
+java:S1604¡"(Make this anonymous inner class a lambda(Ï¹ÿîúÿÿÿÿ8×ÛÿĞ2
 f
-java:S3252
-"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8›ªĞ2
+java:S32529"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8€ÜÿĞ2
+^	java:S125·"<This block of commented-out lines of code should be removed.(ü¿ı¶ÿÿÿÿÿ8ŒÜÿĞ2
