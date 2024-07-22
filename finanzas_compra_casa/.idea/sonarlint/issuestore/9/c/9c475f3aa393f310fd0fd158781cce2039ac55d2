@@ -1,6 +1,13 @@
 
 K
-java:S1604¡"(Make this anonymous inner class a lambda(Ï¹ÿîúÿÿÿÿ8×ÛÿĞ2
+java:S1604«"(Make this anonymous inner class a lambda(Ï¹ÿîúÿÿÿÿ8ŒÍ÷ã2
+K
+java:S1604ñ"(Make this anonymous inner class a lambda(õ˜¯Ìûÿÿÿÿ8ŒÍ÷ã2
+E
+java:S1604Í"(Make this anonymous inner class a lambda(Ô Ğ`8ŒÍ÷ã2
 f
-java:S32529"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8€ÜÿĞ2
-^	java:S125·"<This block of commented-out lines of code should be removed.(ü¿ı¶ÿÿÿÿÿ8ŒÜÿĞ2
+java:S32529"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8µÍ÷ã2
+^	java:S125Á"<This block of commented-out lines of code should be removed.(ü¿ı¶ÿÿÿÿÿ8¿Í÷ã2
+l
+java:S3252Ô"IUse static access with "javax.swing.WindowConstants" for "HIDE_ON_CLOSE".( ™Û‘øÿÿÿÿ8ÁÍ÷ã2
+^	java:S125‡"<This block of commented-out lines of code should be removed.(ü¿ı¶ÿÿÿÿÿ8ÇÍ÷ã2

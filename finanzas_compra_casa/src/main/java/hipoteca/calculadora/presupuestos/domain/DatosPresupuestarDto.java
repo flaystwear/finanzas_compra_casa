@@ -17,8 +17,8 @@ public class DatosPresupuestarDto {
     private String tipoVivienda;
     private double salarioNeto;
     private double deudas;
-    private boolean simulacionExtra;
     private double dineroSolicitado;
+    private double cuantoQuieroGastar;
 
 
     @Override
@@ -34,7 +34,6 @@ public class DatosPresupuestarDto {
                 ", tipoVivienda='" + tipoVivienda + '\'' +
                 ", salarioNeto=" + salarioNeto +
                 ", deudas=" + deudas +
-                ", simulaciónExtra=" + simulacionExtra +
                 '}';
     }
 }
