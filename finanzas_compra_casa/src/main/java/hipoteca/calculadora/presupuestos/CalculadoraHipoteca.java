@@ -42,12 +42,12 @@ public class CalculadoraHipoteca {
     public void showMissingFieldElem(JFrame frame){
         // Crear una ventana emergente
         JOptionPane.showMessageDialog(frame, "Error al pedir el presupuesto:\n" +
-                "Hay algún campo sin rellenar", "Mensaje de error", JOptionPane.INFORMATION_MESSAGE);
+                "Hay algun campo sin rellenar", "Mensaje de error", JOptionPane.INFORMATION_MESSAGE);
     }
     public void showNotEnoughMoney(JFrame frame, PresupuestoDenegadoException e){
         // Crear una ventana emergente
-        JOptionPane.showMessageDialog(frame, "La letra mensual ("+e.getLetra()+") superaría el límite\n " +
-                "impuesto por los bancos en función del salario mensual\n ("+e.getMaxNeto()+"). \nNo se concedería la hipoteca", "Mensaje de error", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(frame, "La letra mensual ("+e.getLetra()+") superaria el limite\n " +
+                "impuesto por los bancos en funcion del salario mensual\n ("+e.getMaxNeto()+"). \nNo se concederia la hipoteca", "Mensaje de error", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public JFrame crearPanel(){
@@ -63,9 +63,9 @@ public class CalculadoraHipoteca {
 
         // Configurar NumberFormat para decimales
         NumberFormat decimalFormat = NumberFormat.getNumberInstance();
-        decimalFormat.setMaximumFractionDigits(2); // Número máximo de decimales
+        decimalFormat.setMaximumFractionDigits(2); // Numero maximo de decimales
 
-        //Creación de los campos:
+        //Creacion de los campos:
 
         JLabel precioCasaLabel = new JLabel("Precio de la casa");
         JFormattedTextField precioCasaField = new JFormattedTextField(decimalFormat);
@@ -79,7 +79,7 @@ public class CalculadoraHipoteca {
         JComboBox<String> entradaComboBox = new JComboBox<>(Constantes.ENTRADAS);
 
 
-        JLabel tipoInteresLabel = new JLabel("Tipo de interés (con ,)");
+        JLabel tipoInteresLabel = new JLabel("Tipo de interes (con ,)");
         JFormattedTextField tipoInteresField = new JFormattedTextField(decimalFormat);
 
 
@@ -87,7 +87,7 @@ public class CalculadoraHipoteca {
         JFormattedTextField tiempoHipotecaField = new JFormattedTextField(decimalFormat);
 
 
-        JLabel financieroLabel = new JLabel("Va a usar un financiero?");
+        JLabel financieroLabel = new JLabel("Va a usar un financiero");
         JCheckBox financieroCheckBox = new JCheckBox();
 
         JLabel propiedadLabel = new JLabel("Tiene usted alguna otra propiedad a su nombre?");
@@ -155,13 +155,13 @@ public class CalculadoraHipoteca {
         panel.add(deudasField);
         panel.add(Box.createVerticalStrut(10));
 
-        panel.add(new JLabel()); // Espacio vacío
+        panel.add(new JLabel()); // Espacio vacio
         panel.add(submitButton);
 
 
 
-        panel.add(new JLabel()); // Espacio vacío        panel.add(new JLabel()); // Espacio vacío
-        panel.add(new JLabel()); // Espacio vacío
+        panel.add(new JLabel()); // Espacio vacio        panel.add(new JLabel()); // Espacio vacio
+        panel.add(new JLabel()); // Espacio vacio
         panel.add(labelInformativo);
         panel.add(casaParaComprarButton);
 
@@ -190,7 +190,7 @@ public class CalculadoraHipoteca {
                             .build();
                     executeSimulation(datosPresupuestarDto,frame);
                     // Mostrar un mensaje con los datos introducidos
-                    // JOptionPane.showMessageDialog(frame, "Nombre: " + nombre + "\nApellido: " + apellido + "\nEmail: " + email + "\nTeléfono: " + telefono);
+                    // JOptionPane.showMessageDialog(frame, "Nombre: " + nombre + "\nApellido: " + apellido + "\nEmail: " + email + "\nTelefono: " + telefono);
                 }catch (NullPointerException | ClassCastException | NumberFormatException  exception){
                     System.out.println(exception.getMessage());
                     showMissingFieldElem(frame);
@@ -217,9 +217,9 @@ public class CalculadoraHipoteca {
 
                     // Configurar NumberFormat para decimales
                     NumberFormat decimalFormat = NumberFormat.getNumberInstance();
-                    decimalFormat.setMaximumFractionDigits(2); // Número máximo de decimales
+                    decimalFormat.setMaximumFractionDigits(2); // Numero maximo de decimales
 
-                    //Creación de los campos:
+                    //Creacion de los campos:
                     JLabel presupuestoCasalabel = new JLabel("Cuanto dinero total quieres gastar");
                     JFormattedTextField presupuestoCasaField = new JFormattedTextField(decimalFormat);
 
@@ -260,7 +260,7 @@ public class CalculadoraHipoteca {
                                             .build();
                             calcularCasa(datosPresupuestarDto,frame);
                             // Mostrar un mensaje con los datos introducidos
-                            // JOptionPane.showMessageDialog(frame, "Nombre: " + nombre + "\nApellido: " + apellido + "\nEmail: " + email + "\nTeléfono: " + telefono);
+                            // JOptionPane.showMessageDialog(frame, "Nombre: " + nombre + "\nApellido: " + apellido + "\nEmail: " + email + "\nTelefono: " + telefono);
                         }catch (NullPointerException | ClassCastException | NumberFormatException  exception){
                             System.out.println(exception.getMessage());
                             showMissingFieldElem(frame);

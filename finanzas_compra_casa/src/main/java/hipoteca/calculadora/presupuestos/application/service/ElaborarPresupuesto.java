@@ -53,9 +53,9 @@ public class ElaborarPresupuesto {
         datos.setDineroSolicitado(dineroSolicitado);
         double letra= calculadoraPreciosLetra.calcularPresupuesto(datos);
         if(letra>(datos.getSalarioNeto()*Constantes.MODIFICADOR_SALARIO)){
-            throw new PresupuestoDenegadoException("La letra resultante de esta operación" +
-                    " es superior al 33% de los ingresos netos, \n de modo que no se podría" +
-                    " aprobar la operación", letra, datos.getSalarioNeto()*Constantes.MODIFICADOR_SALARIO);
+            throw new PresupuestoDenegadoException("La letra resultante de esta operacion" +
+                    " es superior al 33% de los ingresos netos, \n de modo que no se podria" +
+                    " aprobar la operacion", letra, datos.getSalarioNeto()*Constantes.MODIFICADOR_SALARIO);
         }
         return Presupuesto.builder()
                 .precioCasa(datos.getPrecioCasa())
@@ -104,7 +104,7 @@ public class ElaborarPresupuesto {
                     + gastosInmobiliaria
                     + entrada;
             if(dineroNecesario<dineroDisponible){
-                //El presupuesto da para más, subimos el precio. Guardamos el anterior por si nos pasamos
+                //El presupuesto da para mas, subimos el precio. Guardamos el anterior por si nos pasamos
                 precioPrevioViable=precioCasaHipotetico;
                 precioCasaHipotetico=precioCasaHipotetico*Constantes.SUBIR_PRECIO;
 
@@ -148,7 +148,7 @@ public class ElaborarPresupuesto {
         }
         if(mensualidad>datos.getSalarioNeto()*Constantes.MODIFICADOR_SALARIO){
             System.out.println("La letra mensual ( "+mensualidad+" ) es demasiado alta para ese salario ( "+datos.getSalarioNeto()+ ")\n" +
-                    "La letra máxima permitida sería "+datos.getSalarioNeto()*Constantes.MODIFICADOR_SALARIO);
+                    "La letra maxima permitida seria "+datos.getSalarioNeto()*Constantes.MODIFICADOR_SALARIO);
             prestamo=9999999999.99;
         }
         return Presupuesto.builder()
