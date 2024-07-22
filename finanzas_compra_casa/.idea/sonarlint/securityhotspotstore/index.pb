@@ -33,3 +33,5 @@ Osrc/main/java/hipoteca/calculadora/presupuestos/application/calculos/Letra.java
 csrc/main/java/hipoteca/calculadora/presupuestos/domain/exceptions/PresupuestoDenegadoException.java,a\e\aeb0924450550340c0a8ae8d57d3e21bb30e797c
 z
 Jsrc/main/java/hipoteca/calculadora/presupuestos/application/AppConfig.java,3\7\373985456a6cccec5ef20bb908698ab8fbbb1a76
+D
+META-INF/MANIFEST.MF,2\e\2e8cf92205ec303e7304888d382cb6a8cf5f56ba
