@@ -36,7 +36,10 @@ public class ElaborarPresupuesto {
 
         double impuestosCompra=calculadoraImpuestosCompra.calcularImpuesto(datos);
         double gastosInmobiliaria=calculadoraImpuestosInmobiliaria.calcularImpuesto(datos);
-        double financiero= Constantes.PRECIO_FINANCIERO;
+        double financiero= 0.0;
+        if(datos.isFinanciero()){
+            financiero= Constantes.PRECIO_FINANCIERO;
+        }
         double tasacion=Constantes.PRECIO_TASACION;
         double notario= Constantes.PRECIO_NOTARIO;
         double entrada = calculadoraPreciosEntrada.calcularPresupuesto(datos);
