@@ -1,7 +1,10 @@
 package hipoteca.calculadora.presupuestos;
 
+import hipoteca.calculadora.presupuestos.application.service.ElaborarPresupuesto;
 import hipoteca.calculadora.presupuestos.domain.DatosPresupuestarDto;
+import hipoteca.calculadora.presupuestos.domain.Presupuesto;
 import hipoteca.calculadora.presupuestos.domain.constantes.Constantes;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +14,10 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 public class CalculadoraHipoteca {
+
+
     public static <JPanel> void main(String[] args) {
+
         JFrame pantalla= crearPanel();
         showWelcomeMessage(pantalla);
     }
@@ -30,14 +36,14 @@ public class CalculadoraHipoteca {
 
     public static JFrame crearPanel(){
         // Crear el JFrame (ventana principal)
-        JFrame frame = new JFrame("Mi Aplicación");
+        JFrame frame = new JFrame("Calculadora presupuestos hipotecas");
         frame.setSize(1100, 700);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null); // Centrar la ventana en la pantalla
         Dimension fieldSize = new Dimension(50, 10);//tamaño de los campos de texto a rellenar
 
         javax.swing.JPanel panel = new javax.swing.JPanel();
-        panel.setLayout(new GridLayout(13, 1)); // 5 filas y 2 columnas
+        panel.setLayout(new GridLayout(12, 1)); // 5 filas y 2 columnas
 
         // Configurar NumberFormat para decimales
         NumberFormat decimalFormat = NumberFormat.getNumberInstance();
@@ -74,9 +80,6 @@ public class CalculadoraHipoteca {
         JLabel tipoCasaLabel = new JLabel("Que tipo de casa tienes en mente?");
         JComboBox<String> tipoCasaComboBox = new JComboBox<>(Constantes.TIPO_CASA);
         tiempoHipotecaField.setMaximumSize(fieldSize);
-
-        JLabel calculoExtraLabel = new JLabel("Quiere incluir simulación para +-15.000 €?");
-        JCheckBox presupuestoExtraCheckBox = new JCheckBox();
 
         JLabel salarioLabel = new JLabel("Salario neto mensual (combinado de los compradores)");
         JFormattedTextField salarioField = new JFormattedTextField(decimalFormat);
@@ -131,10 +134,6 @@ public class CalculadoraHipoteca {
 
         panel.add(deudasLabel);
         panel.add(deudasField);
-        panel.add(Box.createVerticalStrut(10));
-
-        panel.add(calculoExtraLabel);
-        panel.add(presupuestoExtraCheckBox);
 
 
         panel.add(new JLabel()); // Espacio vacío        panel.add(new JLabel()); // Espacio vacío
@@ -162,7 +161,6 @@ public class CalculadoraHipoteca {
                                     .tipoVivienda(tipoCasaComboBox.getSelectedItem().toString())
                                     .salarioNeto(Double.parseDouble(salarioField.getText()))
                                     .deudas(Double.parseDouble(deudasField.getText()))
-                                    .simulacionExtra(presupuestoExtraCheckBox.isSelected())
                             .build();
                     executeSimulation(datosPresupuestarDto,frame);
                     // Mostrar un mensaje con los datos introducidos
@@ -181,7 +179,8 @@ public class CalculadoraHipoteca {
         return frame;
     }
     public static void executeSimulation(DatosPresupuestarDto datosPresupuestarDto, JFrame frame){
-        JOptionPane.showMessageDialog(frame, datosPresupuestarDto.toString());
+        Presupuesto presupuesto=ElaborarPresupuesto.execute(datosPresupuestarDto);
+        JOptionPane.showMessageDialog(frame, presupuesto.toString());
     }
 
 

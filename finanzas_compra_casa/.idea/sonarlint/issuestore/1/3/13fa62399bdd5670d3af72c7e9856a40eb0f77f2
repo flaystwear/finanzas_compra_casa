@@ -1,0 +1,28 @@
+
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Îá ¾2
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Îá ¾2
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Îá ¾2
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÓŠ¦¾2
+W
+java:S1118":Add a private constructor to hide the implicit public one.(Ÿñ“Ã8Ïá ¾2
+i
+java:S6830"GRename this bean to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü³Ç÷ÿÿÿÿÿ8Ğá ¾2
+d
+java:S6830"GRename this bean to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô©æ8ÕŠ¦¾2
+V
+java:S18541"9Remove this useless assignment to local variable "letra".(µ€¥‘8‰§¾2
+a
+java:S18540"DRemove this useless assignment to local variable "dineroSolicitado".(é·àİ8Ğá ¾2
+a
+java:S1854*"?Remove this useless assignment to local variable "dineroTotal".(¦³±›øÿÿÿÿ8Ğá ¾2
+]	java:S125#"<This block of commented-out lines of code should be removed.(İàÒõıÿÿÿÿ8Äî¡¾2
+R
+java:S1481*"0Remove this unused "dineroTotal" local variable.(¦³±›øÿÿÿÿ8Òá ¾2
+R
+java:S14810"5Remove this unused "dineroSolicitado" local variable.(é·àİ8Òá ¾2
+G
+java:S14811"*Remove this unused "letra" local variable.(µ€¥‘8‹§¾2

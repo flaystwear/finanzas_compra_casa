@@ -1,9 +1,5 @@
 package hipoteca.calculadora.presupuestos.domain.constantes;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Constantes {
     public static final String[] INMOBILIARIAS= {"NO","TecnoCasa","Redpiso", "Otra"};
@@ -15,8 +11,11 @@ public class Constantes {
     public static final double MODIFICADOR_IVA =0.21;
     public static final double IMPUESTOS_SIN_PROPIEDAD =0.054;
     public static final double INPUESTOS_CON_PROPIEDAD =0.06;
-    public static final double INPUESTOS_OBRA_NUEVA =0.06;
+    public static final double INPUESTOS_OBRA_NUEVA =0.10;
     public static final double MODIFICADOR_SALARIO =0.33;
+    public static final double PRECIO_FINANCIERO=3000.0;
+    public static final double PRECIO_TASACION=484.0;
+    public static final double PRECIO_NOTARIO= 1700;
 
 }
 
