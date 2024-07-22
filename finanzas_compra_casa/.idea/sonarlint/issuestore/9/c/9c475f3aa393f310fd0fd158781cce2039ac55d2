@@ -7,7 +7,7 @@ E
 java:S1604Í"(Make this anonymous inner class a lambda(Ô Ğ`8ŒÍ÷ã2
 f
 java:S32529"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8µÍ÷ã2
-^	java:S125Á"<This block of commented-out lines of code should be removed.(ü¿ı¶ÿÿÿÿÿ8¿Í÷ã2
+^	java:S125Á"<This block of commented-out lines of code should be removed.(×ñ‘‹ùÿÿÿÿ8¿Í÷ã2
 l
 java:S3252Ô"IUse static access with "javax.swing.WindowConstants" for "HIDE_ON_CLOSE".( ™Û‘øÿÿÿÿ8ÁÍ÷ã2
-^	java:S125‡"<This block of commented-out lines of code should be removed.(ü¿ı¶ÿÿÿÿÿ8ÇÍ÷ã2
+^	java:S125‡"<This block of commented-out lines of code should be removed.(×ñ‘‹ùÿÿÿÿ8ÇÍ÷ã2

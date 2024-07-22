@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.example</groupId>
   <artifactId>finanzas_compra_casa</artifactId>
-  <version>1.1.1-SNAPSHOT</version>
+  <version>1.1.2-SNAPSHOT</version>
   <name>Archetype - finanzas_compra_casa</name>
   <url>http://maven.apache.org</url>
 
@@ -12,7 +12,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.26</version> <!-- Utiliza la versión más reciente disponible -->
+      <version>1.18.26</version> <!-- Utiliza la version más reciente disponible -->
       <scope>provided</scope>
     </dependency>
     <dependency>
