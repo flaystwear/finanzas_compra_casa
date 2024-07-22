@@ -6,4 +6,33 @@
   <version>1.0-SNAPSHOT</version>
   <name>Archetype - finanzas_compra_casa</name>
   <url>http://maven.apache.org</url>
+
+  <dependencies>
+    <!-- Dependencia de Lombok -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.26</version> <!-- Utiliza la versión más reciente disponible -->
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>5.3.9</version>
+    </dependency>
+
+    <!-- Spring Core Dependency -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>5.3.9</version>
+    </dependency>
+
+    <!-- Spring Beans Dependency -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>5.3.9</version>
+    </dependency>
+  </dependencies>
 </project>
