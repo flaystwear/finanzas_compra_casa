@@ -3,7 +3,7 @@ package hipoteca.calculadora.presupuestos.domain.constantes;
 
 public class Constantes {
     public static final String[] INMOBILIARIAS= {"NO","TecnoCasa","Redpiso", "Otra"};
-    public static final String[] ENTRADAS= {"80","87","90","95", "100"};
+    public static final String[] ENTRADAS= {"00","10","20","30","40","50","60", "70","80","87","90","95", "100"};
     public static final String[] TIPO_CASA= {"SEGUNDA MANO","OBRA NUEVA"};
     public static final double MODIFICADOR_REDPISO =0.05;
     public static final double MODIFICADOR_TECNOCASA =0.03;
